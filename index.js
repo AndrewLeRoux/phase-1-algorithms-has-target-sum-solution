@@ -1,13 +1,27 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = new Set();
+  for (const number of array) {
+    if (seenNumbers.has(target - number)){
+      return true
+    }
+    seenNumbers.add(number)
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  o(n)
 */
 
 /* 
-  Add your pseudocode here
+  create new set to hold seen #'s
+
+  for of loop iterating over array
+    if seen #'s set contains value = target - number
+      return true
+  add value of number to seen # set (outside of if statement)
+  
+  return false outside of for loop
 */
 
 /*
